@@ -1,0 +1,284 @@
+/* Variables - Paleta "Digital Zen & Brutalismo Amable" */
+:root {
+    --bg-base: #F4F1EA;       /* Avena / Lino Crudo */
+    --bg-alt: #EBE7DF;        /* Avena Oscurecido (para contraste) */
+    --tech-blue: #002FA7;     /* Azul Klein (Ingeniería/Acción) */
+    --tech-blue-hover: #001F70;
+    --warm-terra: #E36953;    /* Terracota (Empatía/Calidez) */
+    --text-dark: #1A1C1E;     /* Casi negro, muy legible */
+    
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-base);
+    color: var(--text-dark);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Tipografía */
+h1, h2, h3, .logo {
+    font-family: var(--font-heading);
+    color: var(--text-dark);
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.15rem;
+    color: #404345;
+    margin-bottom: 1.5rem;
+}
+
+.accent-terra { color: var(--warm-terra); }
+.accent-tech { color: var(--tech-blue); }
+
+.text-center { text-align: center; }
+
+/* Contenedores y Layout */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section {
+    padding: 8rem 0; /* Respiración / Whitespace */
+}
+
+.bg-alt {
+    background-color: var(--bg-alt);
+}
+
+/* Navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.nav-btn:hover {
+    border-color: var(--tech-blue);
+}
+
+/* Héroe */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero .subtitle {
+    max-width: 650px;
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+}
+
+/* Botones (Brutalismo Amable) */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--tech-blue);
+    color: #ffffff;
+    padding: 1.1rem 2.5rem;
+    border: none;
+    border-radius: 4px; /* Borde sutil */
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--tech-blue-hover);
+    transform: translateY(-3px);
+}
+
+/* Manifiesto */
+.manifesto-text {
+    max-width: 750px;
+}
+
+.manifesto-text p {
+    font-size: 1.3rem;
+}
+
+/* Tarjetas de Servicios */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card-number {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--tech-blue);
+    margin-bottom: 1rem;
+    opacity: 0.2;
+}
+
+/* Modal / Popup */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 28, 30, 0.6);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: var(--bg-base);
+    padding: 3.5rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 550px;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.15);
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    font-size: 2rem;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 1.1rem;
+    border: 2px solid transparent;
+    background-color: #ffffff;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus, .input-group select:focus {
+    outline: none;
+    border-color: var(--tech-blue);
+}
+
+/* Footer */
+.footer {
+    padding: 3rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Utilidades Animación */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.2rem; }
+    .navbar { padding: 1.5rem 2rem; }
+    .hero { min-height: auto; padding-top: 6rem; }
+    .modal-content { padding: 2.5rem 1.5rem; }
+}
